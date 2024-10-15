@@ -155,7 +155,7 @@ var UPNG = (function() {
 				}
 				var rct = {x:rUi(data, offset+12),y:rUi(data, offset+16),width:rUi(data, offset+4),height:rUi(data, offset+8)};
 				var del = rUs(data, offset+22);  del = rUs(data, offset+20) / (del==0?100:del);
-				var frm = {rect:rct, delay:Math.round(del*1000), dispose:data[offset+24], blend:data[offset+25]};
+				var frm = {rect:rct, delay:del*1000, dispose:data[offset+24], blend:data[offset+25]};
 				//console.log(frm);
 				out.frames.push(frm);
 			}
@@ -1222,4 +1222,6 @@ if(G>r)r=G;i++}while(i<y){A[i<<1]=0;A[(i<<1)+1]=0;i++}return r}return v}();
 	UPNG.quantize.getKDtree=getKDtree;
 	UPNG.quantize.getNearest=getNearest;
 })();
+
+module.exports = UPNG;
 
